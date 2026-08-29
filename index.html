@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Programme Concours SPP — Épreuves physiques (femme)</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#141A20">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SPP Femme">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --granite:#141A20; --granite2:#1D242C; --granite3:#28313A; --raised:#333F4A;
+    --snow:#EDF1F4; --mist:#93A1AD; --faint:rgba(255,255,255,.07);
+    --base:#49B56C;   /* Bloc 1 · fondation */
+    --dev:#E7A23C;    /* Bloc 2 · développement */
+    --water:#58C6D8;  /* Bloc 3 · natation intégrée */
+    --alert:#E4483C;  /* concours / affûtage */
+    --disp:'Barlow Condensed',Impact,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+  body{background:var(--granite);color:var(--snow);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .topo{position:fixed;inset:0;z-index:0;opacity:.4;pointer-events:none;background:radial-gradient(1100px 560px at 82% -10%, rgba(228,72,60,.09), transparent 60%),radial-gradient(900px 500px at 0% 112%, rgba(88,198,216,.08), transparent 60%)}
+  .topo svg{position:absolute;inset:0;width:100%;height:100%}
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 20px}
+
+  header{padding:48px 0 24px;border-bottom:1px solid var(--faint)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--alert)}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(40px,8.4vw,78px);line-height:.92;letter-spacing:.01em;text-transform:uppercase;margin:10px 0 6px}
+  h1 .thin{color:var(--mist);font-weight:500}
+  .sub{color:var(--mist);max-width:56ch;font-size:15px}
+
+  .cd{display:flex;align-items:baseline;gap:14px;margin:18px 0 2px;flex-wrap:wrap}
+  .cd .jm{font-family:var(--mono);font-weight:700;font-size:clamp(38px,10vw,58px);line-height:.9;color:#fff}
+  .cd .jm span{color:var(--alert)}
+  .cd .cdmeta{font-size:12px;color:var(--mist);font-family:var(--mono)}
+  .cd .cdmeta b{color:var(--snow)}
+
+  .ridge{margin:22px 0 4px;border:1px solid var(--faint);border-radius:14px;background:linear-gradient(180deg,var(--granite2),var(--granite));padding:16px 18px 10px}
+  .ridge h3{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:8px}
+  .ridge svg{width:100%;height:132px;display:block;overflow:visible}
+  .ridge .lbl{font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+  .ridge .date{font-family:var(--mono);font-size:9px;fill:var(--mist)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 4px}
+  .stat{background:var(--granite2);border:1px solid var(--faint);border-radius:10px;padding:12px 14px}
+  .stat b{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--snow);display:block}
+  .stat span{font-size:11px;color:var(--mist);text-transform:uppercase;letter-spacing:.08em}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  nav{position:sticky;top:0;z-index:5;background:rgba(20,26,32,.88);backdrop-filter:blur(9px);border-bottom:1px solid var(--faint);margin-top:22px}
+  .navin{display:flex;gap:6px;overflow-x:auto;padding:11px 20px;max-width:1040px;margin:0 auto;scrollbar-width:none}
+  .navin::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--mist);background:none;border:1px solid transparent;border-radius:999px;padding:6px 15px;cursor:pointer;transition:.18s;white-space:nowrap}
+  .tab:hover{color:var(--snow)}
+  .tab.on{color:var(--granite);background:var(--alert);border-color:var(--alert)}
+  .tab[data-b="b1"].on{background:var(--base);border-color:var(--base)}
+  .tab[data-b="b2"].on{background:var(--dev);border-color:var(--dev)}
+  .tab[data-b="b3"].on{background:var(--water);border-color:var(--water)}
+  .tab[data-b="b4"].on{background:var(--alert);border-color:var(--alert)}
+  .tab[data-b="nat"].on{background:var(--water);border-color:var(--water)}
+
+  main{padding:30px 0 80px}
+  section{display:none;animation:fade .3s ease}
+  section.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .sechead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .sechead h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,6vw,44px);text-transform:uppercase;letter-spacing:.01em;line-height:1}
+  .sechead .tag{font-family:var(--mono);font-size:12px;color:var(--mist)}
+  .accentbar{height:4px;width:64px;border-radius:4px;margin:2px 0 16px}
+  .secfocus{color:var(--mist);margin-bottom:20px;font-size:15px;max-width:64ch}
+
+  .prog{display:flex;align-items:center;gap:12px;margin:0 0 22px;background:var(--granite2);border:1px solid var(--faint);border-radius:10px;padding:10px 14px}
+  .prog .bar{flex:1;height:7px;background:var(--granite3);border-radius:6px;overflow:hidden}
+  .prog .fill{height:100%;width:0;transition:width .3s}
+  .prog .num{font-family:var(--mono);font-size:12px;color:var(--mist);white-space:nowrap}
+
+  .sess{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--faint)}
+  .sess:first-child{border-top:0}
+  .sess.cardio{--tint:var(--base)} .sess.ppa{--tint:var(--dev)} .sess.swim{--tint:var(--water)} .sess.force{--tint:#C9A24B}
+  .chk{flex:0 0 auto;width:24px;height:24px;border-radius:6px;border:1.5px solid var(--raised);background:var(--granite3);cursor:pointer;margin-top:2px;display:grid;place-items:center;transition:.15s}
+  .chk:hover{border-color:var(--tint)}
+  .chk.done{background:var(--tint);border-color:var(--tint)}
+  .chk.done::after{content:"";width:6px;height:11px;border:solid var(--granite);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translateY(-1px)}
+  .sbody{flex:1;min-width:0}
+  .sbody.done{opacity:.5}
+  .sbody.done .sday{text-decoration:line-through}
+  .sday{font-family:var(--disp);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.03em;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .sday .pill{font-family:var(--mono);font-weight:500;font-size:9.5px;letter-spacing:.08em;padding:2px 8px;border-radius:5px;background:color-mix(in srgb,var(--tint) 20%,transparent);color:var(--tint);text-transform:uppercase}
+  .ssub{font-size:12.5px;color:var(--mist);margin-top:2px}
+  .items{list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px}
+  .items li{font-size:13.5px;color:#CBD5DD;display:flex;gap:7px}
+  .items li::before{content:"›";color:var(--tint);font-weight:700}
+  .items b{font-family:var(--mono);font-weight:700;color:var(--snow);font-size:12.5px}
+  .resetw{margin-top:16px;background:none;border:1px solid var(--faint);color:var(--mist);border-radius:8px;padding:8px 14px;font-size:12.5px;cursor:pointer;font-family:var(--body)}
+  .resetw:hover{border-color:var(--alert);color:var(--alert)}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  @media(max-width:720px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--granite2);border:1px solid var(--faint);border-radius:12px;padding:18px}
+  .card.full{grid-column:1/-1}
+  .card h4{font-family:var(--disp);font-weight:600;font-size:19px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+  .card h4 .dot{width:9px;height:9px;border-radius:50%;background:var(--water)}
+  .card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .card li{font-size:14px;color:#CBD5DD;padding-left:16px;position:relative}
+  .card li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--water);opacity:.7}
+  .card li b{color:var(--snow)}
+  .card .key{font-family:var(--mono);color:var(--alert);font-weight:700}
+
+  .weekgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+  @media(max-width:560px){.weekgrid{grid-template-columns:repeat(2,1fr)}}
+  .daycell{background:var(--granite3);border:1px solid var(--faint);border-radius:9px;padding:11px 10px}
+  .daycell .dn{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)}
+  .daycell .dv{font-family:var(--disp);font-weight:600;font-size:15px;text-transform:uppercase;margin-top:4px;line-height:1.1}
+  .daycell.cardio .dv{color:var(--base)} .daycell.ppa .dv{color:var(--dev)} .daycell.swim .dv{color:var(--water)} .daycell.force .dv{color:#C9A24B}
+  .gridlabel{font-family:var(--disp);font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:.03em;margin:22px 0 2px;color:var(--snow)}
+  .gridlabel .sm{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--mist);letter-spacing:.06em;text-transform:none;margin-left:8px}
+
+  footer{border-top:1px solid var(--faint);padding:22px 0 40px;color:var(--mist);font-size:12.5px;font-family:var(--mono);line-height:1.7}
+  footer b{color:var(--snow)}
+</style>
+</head>
+<body>
+<div class="topo" aria-hidden="true">
+  <svg preserveAspectRatio="none" viewBox="0 0 1000 700"><g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <path d="M-20,120 C200,60 380,180 560,120 S900,60 1020,150"/><path d="M-20,220 C220,150 400,270 580,210 S920,150 1020,240"/>
+    <path d="M-20,330 C240,250 420,370 600,300 S940,240 1020,340"/><path d="M-20,450 C240,370 440,490 620,420 S940,360 1020,470"/>
+    <path d="M-20,560 C260,480 460,600 640,530 S960,470 1020,580"/></g></svg>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Concours sapeur-pompier professionnel · barème femme</div>
+    <h1>Programme <span class="thin">4 séances</span></h1>
+    <p class="sub">Cap sur les 3 épreuves physiques : natation, parcours professionnel adapté, Luc Léger. Quatre séances par semaine, une seule par jour. La natation entre dans la rotation le 1er août 2027, trois mois avant le concours.</p>
+
+    <div class="cd">
+      <div class="jm" id="jm">J-<span>—</span></div>
+      <div class="cdmeta">jusqu'au concours<br><b>novembre 2027</b></div>
+    </div>
+
+    <div class="ridge" aria-label="Profil du programme">
+      <h3>Ligne de temps — la natation entre 3 mois avant</h3>
+      <svg viewBox="0 0 1000 150" preserveAspectRatio="none" role="img">
+        <defs><linearGradient id="grd" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#49B56C"/><stop offset="0.44" stop-color="#49B56C"/>
+          <stop offset="0.46" stop-color="#E7A23C"/><stop offset="0.74" stop-color="#E7A23C"/>
+          <stop offset="0.76" stop-color="#58C6D8"/><stop offset="0.9" stop-color="#58C6D8"/>
+          <stop offset="0.92" stop-color="#E4483C"/><stop offset="1" stop-color="#E4483C"/></linearGradient></defs>
+        <path d="M0,118 L120,100 L260,104 L420,74 L560,80 L700,44 L760,40 L820,26 L900,20 L1000,60 L1000,150 L0,150 Z" fill="url(#grd)" opacity="0.15"/>
+        <path d="M0,118 L120,100 L260,104 L420,74 L560,80 L700,44 L760,40 L820,26 L900,20 L1000,60" fill="none" stroke="url(#grd)" stroke-width="2.5"/>
+        <circle cx="760" cy="40" r="4" fill="#58C6D8"/><text x="600" y="30" class="date" style="fill:#58C6D8">🌊 Natation · 01/08/2027</text>
+        <circle cx="900" cy="20" r="4" fill="#E4483C"/><text x="820" y="12" class="date" style="fill:#E4483C">🎯 Concours · 11/2027</text>
+        <text x="6" y="140" class="lbl" style="fill:#49B56C">Bloc 1</text><text x="6" y="150" class="date">Fondation</text>
+        <text x="430" y="140" class="lbl" style="fill:#E7A23C">Bloc 2</text><text x="430" y="150" class="date">Développement</text>
+        <text x="700" y="140" class="lbl" style="fill:#58C6D8">Bloc 3</text><text x="700" y="150" class="date">Natation intégrée</text>
+        <text x="915" y="140" class="lbl" style="fill:#E4483C">Affûtage</text>
+      </svg>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>4 / sem</b><span>séances</span></div>
+      <div class="stat"><b>3 mois</b><span>natation avant</span></div>
+      <div class="stat"><b>≤ 60 s</b><span>natation 50 m</span></div>
+      <div class="stat"><b>5 min 30</b><span>PPA · 22 kg</span></div>
+    </div>
+  </header>
+</div>
+
+<nav><div class="navin" id="tabs">
+  <button class="tab on" data-sec="over">Vue d'ensemble</button>
+  <button class="tab" data-sec="b1" data-b="b1">Bloc 1 · Fondation</button>
+  <button class="tab" data-sec="b2" data-b="b2">Bloc 2 · Développement</button>
+  <button class="tab" data-sec="b3" data-b="b3">Bloc 3 · Natation</button>
+  <button class="tab" data-sec="b4" data-b="b4">Affûtage</button>
+  <button class="tab" data-sec="nat" data-b="nat">Guide natation</button>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- VUE D'ENSEMBLE -->
+  <section id="sec-over" class="on">
+    <div class="sechead"><h2>La semaine à 4 séances</h2><span class="tag">une séance par jour</span></div>
+    <div class="accentbar" style="background:var(--alert)"></div>
+    <p class="secfocus">Deux logiques de semaine selon la période. Avant le 1er août 2027, les 4 séances couvrent cardio et parcours. À partir du 1er août, la natation prend un créneau : c'est le passage au Bloc 3.</p>
+
+    <div class="gridlabel">Semaine type — jusqu'au 31 juillet 2027 <span class="sm">Blocs 1 & 2</span></div>
+    <div class="weekgrid">
+      <div class="daycell cardio"><div class="dn">Séance 1</div><div class="dv">Cardio Luc Léger</div></div>
+      <div class="daycell ppa"><div class="dn">Séance 2</div><div class="dv">Parcours 22 kg</div></div>
+      <div class="daycell cardio"><div class="dn">Séance 3</div><div class="dv">Endurance</div></div>
+      <div class="daycell force"><div class="dn">Séance 4</div><div class="dv">Force fonctionnelle</div></div>
+    </div>
+
+    <div class="gridlabel">Semaine type — à partir du 1er août 2027 <span class="sm">Bloc 3, natation intégrée</span></div>
+    <div class="weekgrid">
+      <div class="daycell swim"><div class="dn">Séance 1</div><div class="dv">Natation 50 m</div></div>
+      <div class="daycell cardio"><div class="dn">Séance 2</div><div class="dv">Cardio Luc Léger</div></div>
+      <div class="daycell ppa"><div class="dn">Séance 3</div><div class="dv">Parcours complet</div></div>
+      <div class="daycell force"><div class="dn">Séance 4</div><div class="dv">Force + gainage</div></div>
+    </div>
+
+    <div class="cards">
+      <div class="card"><h4><span class="dot"></span>Les 3 règles</h4><ul>
+        <li><b>Une épreuve = un objectif clair.</b> Cardio pour le Luc Léger, parcours pour le PPA, technique pour la natation.</li>
+        <li><b>Le volume d'abord, l'intensité ensuite.</b> On construit la base avant de pousser les chronos.</li>
+        <li><b>Décharge toutes les 4 semaines.</b> Volume réduit de 40 %, on ressort plus fort.</li>
+      </ul></div>
+      <div class="card"><h4><span class="dot"></span>Pourquoi la natation à 3 mois</h4><ul>
+        <li>La natation se joue sur la <b>technique et l'aisance</b>, pas sur des mois de volume.</li>
+        <li>Trois mois ciblés suffisent <b>si elle sait déjà nager</b>.</li>
+        <li>Si l'eau n'est pas un terrain connu, commencer plus tôt. Voir l'onglet Guide natation.</li>
+      </ul></div>
+    </div>
+    <p style="color:var(--mist);font-size:13px;margin-top:16px">Coche chaque séance faite dans les onglets de bloc. La barre de progression se remplit et tes coches sont mémorisées sur l'appareil.</p>
+  </section>
+
+  <section id="sec-b1"></section>
+  <section id="sec-b2"></section>
+  <section id="sec-b3"></section>
+  <section id="sec-b4"></section>
+
+  <!-- GUIDE NATATION -->
+  <section id="sec-nat">
+    <div class="sechead"><h2>Guide natation</h2><span class="tag">épreuve éliminatoire</span></div>
+    <div class="accentbar" style="background:var(--water)"></div>
+    <p class="secfocus">50 m nage libre, sans arrêt, plongeon ou saut du bord. Non notée, mais un échec est éliminatoire. Seuil femme : <span style="color:var(--water);font-family:var(--mono);font-weight:700">1 minute (60 s)</span>.</p>
+    <div class="cards">
+      <div class="card"><h4><span class="dot"></span>Les 3 priorités techniques</h4><ul>
+        <li><b>Respiration régulière.</b> Un rythme tenu bat la vitesse brute.</li>
+        <li><b>Position horizontale.</b> Corps gainé, tête basse, moins de traînée.</li>
+        <li><b>Départ et virage.</b> Un plongeon propre et un virage touché font gagner des secondes.</li>
+      </ul></div>
+      <div class="card"><h4><span class="dot"></span>Structure d'une séance</h4><ul>
+        <li><b>Échauffement :</b> 200 m souple, éducatifs.</li>
+        <li><b>Corps :</b> 6 à 8 × 50 m départ plongé, allure cible, récupération complète.</li>
+        <li><b>Retour au calme :</b> 100 m lent.</li>
+      </ul></div>
+      <div class="card full"><h4><span class="dot"></span>Plan des 3 mois</h4><ul>
+        <li><b>Mois 1 (août) :</b> aisance et technique. Nager 50 m propre et sans forcer, travailler la respiration.</li>
+        <li><b>Mois 2 (septembre) :</b> vitesse. Séries de 50 m chronométrés, viser régulièrement sous 60 s.</li>
+        <li><b>Mois 3 (octobre) :</b> conditions réelles. Départ plongé, un seul 50 m à fond, marge de sécurité sous le seuil.</li>
+        <li><b>Drapeau rouge :</b> si à un mois du concours elle reste loin des 60 s, passer à <span class="key">2 séances natation par semaine</span> jusqu'au jour J.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Base réglementaire.</b> Décret n°2020-1474 du 30/11/2020, art. 48. Arrêté du 30/11/2020 sur les épreuves physiques communes.<br>
+    <b>À compléter.</b> Le palier cible du Luc Léger (barème femme) est à prendre sur l'arrêté en vigueur — non fourni ici, aucune valeur inventée.<br>
+    Programme de préparation personnel · données enregistrées sur cet appareil.
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var KEY = "spp_prog_done_v1";
+  var mem = {};
+  function load(){ try{ var raw = localStorage.getItem(KEY); if(raw) mem = JSON.parse(raw); }catch(e){} return mem; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(mem)); }catch(e){} }
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- countdown ---------- */
+  (function(){
+    var end = new Date("2027-11-02T08:00:00");
+    function tick(){
+      var days = Math.ceil((end - new Date())/86400000);
+      $("jm").innerHTML = days>0 ? ("J-<span>"+days+"</span>") : (days===0 ? "<span>Jour J</span>" : "<span>terminé</span>");
+    }
+    tick(); setInterval(tick, 60000);
+  })();
+
+  /* ---------- data ---------- */
+  var S = function(id,type,pill,title,sub,items){ return {id:id,type:type,pill:pill,title:title,sub:sub,items:items}; };
+
+  var BLOCKS = {
+    b1: {
+      name:"Bloc 1 · Fondation", color:"var(--base)", tag:"maintenant → février 2027",
+      focus:"Construire la base : endurance aérobie, robustesse générale, familiarité avec le port de charge. La natation reste hors rotation, en technique libre.",
+      sessions:[
+        S("b1s1","cardio","Séance 1 · cardio","Base aérobie","Endurance facile",
+          ["Footing <b>30 → 45 min</b> allure conversationnelle","Terrain varié si possible","En fin de bloc : finir par <b>4 × 30/30</b>"]),
+        S("b1s2","ppa","Séance 2 · robustesse","Renforcement général","Préparer le corps au parcours",
+          ["Gainage <b>3 × 45 s</b>","Squats / fentes <b>3 × 12</b>","Tirage ou tractions assistées <b>3 × 8-10</b>"]),
+        S("b1s3","cardio","Séance 3 · cardio","Endurance longue","Construire le foncier",
+          ["Footing <b>45 → 60 min</b> allure facile","1 sortie sur 2 en nature ou avec du dénivelé si possible","En fin de bloc : ajouter des relances progressives <b>6 × 200 m</b>"]),
+        S("b1s4","force","Séance 4 · force fonctionnelle","Port de charge & gainage","Préparer le corps au 22 kg",
+          ["Marche lestée <b>3 × 5 min</b> sac à dos ou gilet","Développé épaules + tirage horizontal <b>3 × 10</b>","Gainage complet (planche, côtés, dos) <b>3 × 40 s</b>"])
+      ]
+    },
+    b2: {
+      name:"Bloc 2 · Développement", color:"var(--dev)", tag:"février → juillet 2027",
+      focus:"Faire progresser les allures et intensifier le parcours professionnel adapté sous charge. La natation reste hors rotation, entretien libre si possible.",
+      sessions:[
+        S("b2s1","cardio","Séance 1 · cardio","Vitesse & VMA","Préparer le Luc Léger",
+          ["Échauffement <b>15 min</b> progressif","Fractionné <b>8 → 12 × 400 m</b> allure cible, récupération active","Retour au calme <b>10 min</b>"]),
+        S("b2s2","ppa","Séance 2 · parcours","Parcours complet chargé","Technique puis chrono",
+          ["Reconnaissance des ateliers, gestuelle propre avant la vitesse","Parcours complet <b>charge 22 kg</b>, 2 à 3 passages","Travail isolé sur l'atelier le plus limitant"]),
+        S("b2s3","cardio","Séance 3 · cardio","Endurance active","Tenir la durée sans s'écrouler",
+          ["Footing <b>50 → 70 min</b>","Dénivelé ou terrain accidenté 1 sortie sur 2","Fin de séance : gainage dynamique <b>3 × 1 min</b>"]),
+        S("b2s4","force","Séance 4 · force","Port de charge avancé","Transfert vers le parcours",
+          ["Marche lestée <b>3 × 8 min</b>, charge en progression","Tractions ou rowing <b>4 × 8</b>","Gainage complet + mollets <b>3 × 45 s</b>"])
+      ]
+    },
+    b3: {
+      name:"Bloc 3 · Natation intégrée", color:"var(--water)", tag:"1er août → 20 octobre 2027",
+      focus:"La natation prend un créneau fixe. Cardio et parcours passent en entretien pour préserver la fraîcheur. Voir l'onglet Guide natation pour le détail des 3 mois.",
+      sessions:[
+        S("b3s1","swim","Séance 1 · natation","50 m nage libre","Technique puis vitesse — voir Guide natation",
+          ["Échauffement <b>200 m</b> souple","Corps de séance : <b>6 à 8 × 50 m</b> départ plongé, allure cible","Retour au calme <b>100 m</b> lent"]),
+        S("b3s2","cardio","Séance 2 · cardio","Entretien Luc Léger","Maintenir la caisse sans s'épuiser",
+          ["Fractionné <b>6 → 8 × 400 m</b> allure cible","Volume réduit vs Bloc 2, intensité maintenue","1 sortie sur 3 : test de palier"]),
+        S("b3s3","ppa","Séance 3 · parcours","Parcours complet chargé","Conditions proches du concours",
+          ["Parcours complet <b>charge 22 kg</b>, chronométré","Simuler l'enchaînement complet sans pause longue","Débrief chrono + point technique"]),
+        S("b3s4","force","Séance 4 · force + gainage","Entretien force","Ne pas perdre le travail des blocs précédents",
+          ["Marche lestée <b>2 × 8 min</b>","Circuit haut du corps <b>3 tours</b>","Gainage complet <b>3 × 45 s</b>"])
+      ]
+    },
+    b4: {
+      name:"Bloc 4 · Affûtage", color:"var(--alert)", tag:"21 octobre → concours (novembre 2027)",
+      focus:"Réduire le volume, garder l'intensité et la fraîcheur. Répéter les gestes du jour J sur les 3 épreuves. Rien de nouveau à moins de 3 semaines du concours.",
+      sessions:[
+        S("b4s1","swim","Séance 1 · natation","50 m en conditions réelles","Départ plongé, un seul 50 m à fond",
+          ["Échauffement court <b>150 m</b>","1 à 2 × 50 m départ plongé à allure concours","Vérifier la marge sous le seuil de <b>60 s</b>"]),
+        S("b4s2","cardio","Séance 2 · cardio","Rappel Luc Léger","Entretenir sans fatiguer",
+          ["Échauffement <b>15 min</b>","<b>4 × 400 m</b> allure cible, récupération complète","Pas de séance à fond cette semaine"]),
+        S("b4s3","ppa","Séance 3 · parcours","Répétition conditions réelles","Un seul passage, qualité maximale",
+          ["Reconnaissance rapide des ateliers","1 passage complet <b>charge 22 kg</b>, chronométré","Débrief puis repos"]),
+        S("b4s4","force","Séance 4 · gainage & mobilité","Décharge","Arriver fraîche le jour J",
+          ["Gainage léger <b>3 × 30 s</b>","Mobilité générale <b>15 → 20 min</b>","Aucune charge lourde cette semaine"])
+      ]
+    }
+  };
+
+  /* ---------- rendering ---------- */
+  function renderBlock(id){
+    var b = BLOCKS[id];
+    var sec = $("sec-"+id);
+    sec.innerHTML = "";
+
+    var head = document.createElement("div"); head.className = "sechead";
+    head.innerHTML = "<h2>"+b.name.split("·")[1].trim()+"</h2><span class=\"tag\">"+b.tag+"</span>";
+    sec.appendChild(head);
+
+    var bar = document.createElement("div"); bar.className = "accentbar"; bar.style.background = b.color;
+    sec.appendChild(bar);
+
+    var focus = document.createElement("p"); focus.className = "secfocus"; focus.textContent = b.focus;
+    sec.appendChild(focus);
+
+    var prog = document.createElement("div"); prog.className = "prog";
+    prog.innerHTML = "<div class=\"bar\"><div class=\"fill\" style=\"background:"+b.color+"\"></div></div><div class=\"num\"></div>";
+    sec.appendChild(prog);
+
+    b.sessions.forEach(function(s){
+      var done = !!mem[s.id];
+      var row = document.createElement("div"); row.className = "sess "+s.type;
+      row.innerHTML =
+        "<div class=\"chk"+(done?" done":"")+"\" data-id=\""+s.id+"\" role=\"checkbox\" aria-checked=\""+done+"\" tabindex=\"0\"></div>"+
+        "<div class=\"sbody"+(done?" done":"")+"\">"+
+          "<div class=\"sday\">"+s.title+" <span class=\"pill\">"+s.pill+"</span></div>"+
+          "<div class=\"ssub\">"+s.sub+"</div>"+
+          "<ul class=\"items\">"+s.items.map(function(x){ return "<li><span>"+x+"</span></li>"; }).join("")+"</ul>"+
+        "</div>";
+      sec.appendChild(row);
+    });
+
+    var reset = document.createElement("button"); reset.className = "resetw"; reset.textContent = "Réinitialiser ce bloc"; reset.dataset.block = id;
+    sec.appendChild(reset);
+
+    updateProg(id);
+  }
+
+  function updateProg(id){
+    var sec = $("sec-"+id);
+    var chks = sec.querySelectorAll(".chk");
+    var doneN = sec.querySelectorAll(".chk.done").length;
+    var pct = chks.length ? Math.round(doneN/chks.length*100) : 0;
+    sec.querySelector(".fill").style.width = pct+"%";
+    sec.querySelector(".prog .num").textContent = doneN+" / "+chks.length+" séances";
+  }
+
+  function toggle(chk){
+    var id = chk.dataset.id;
+    var now = !chk.classList.contains("done");
+    chk.classList.toggle("done", now);
+    chk.setAttribute("aria-checked", now);
+    chk.nextElementSibling.classList.toggle("done", now);
+    if(now) mem[id] = 1; else delete mem[id];
+    save();
+    updateProg(id.slice(0,2));
+  }
+
+  function resetBlock(id){
+    BLOCKS[id].sessions.forEach(function(s){ delete mem[s.id]; });
+    save();
+    renderBlock(id);
+  }
+
+  /* ---------- events ---------- */
+  $("tabs").addEventListener("click", function(e){
+    var t = e.target.closest(".tab"); if(!t) return;
+    document.querySelectorAll(".tab").forEach(function(x){ x.classList.remove("on"); });
+    document.querySelectorAll("main section").forEach(function(x){ x.classList.remove("on"); });
+    t.classList.add("on");
+    $("sec-"+t.dataset.sec).classList.add("on");
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  document.querySelector("main").addEventListener("click", function(e){
+    var c = e.target.closest(".chk"); if(c){ toggle(c); return; }
+    var r = e.target.closest(".resetw"); if(r){ resetBlock(r.dataset.block); }
+  });
+  document.querySelector("main").addEventListener("keydown", function(e){
+    if(e.key===" " || e.key==="Enter"){
+      var c = e.target.closest(".chk");
+      if(c){ e.preventDefault(); toggle(c); }
+    }
+  });
+
+  load();
+  ["b1","b2","b3","b4"].forEach(renderBlock);
+})();
+
+/* PWA: service worker (permet install + usage hors-ligne) */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
