@@ -68,6 +68,7 @@
   .tab[data-b="b3"].on{background:var(--water);border-color:var(--water)}
   .tab[data-b="b4"].on{background:var(--alert);border-color:var(--alert)}
   .tab[data-b="nat"].on{background:var(--water);border-color:var(--water)}
+  .tab[data-b="ff"].on{background:var(--alert);border-color:var(--alert)}
 
   main{padding:30px 0 80px}
   section{display:none;animation:fade .3s ease}
@@ -127,6 +128,11 @@
 
   footer{border-top:1px solid var(--faint);padding:22px 0 40px;color:var(--mist);font-size:12.5px;font-family:var(--mono);line-height:1.7}
   footer b{color:var(--snow)}
+
+  /* ==== Programme Fessiers & Force (scope #ff-app) ==== */
+#ff-app{--glute:#E4483C;--upper:#E7A23C;--cross:#58C6D8;--ok:#49B56C;position:relative;}
+#ff-app *{box-sizing:border-box;margin:0;padding:0}#ff-app .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 16px 80px}#ff-app header{padding:28px 0 18px}#ff-app .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--glute)}#ff-app h1{font-family:var(--disp);font-weight:700;font-size:40px;line-height:1;text-transform:uppercase;margin:6px 0 8px}#ff-app .sub{color:var(--mist);font-size:14px}#ff-app .cycle{display:flex;align-items:center;gap:10px;margin-top:16px;background:var(--granite2);border:1px solid var(--faint);border-radius:12px;padding:10px 12px}#ff-app .cycle .lbl{font-family:var(--disp);font-size:22px;font-weight:700;text-transform:uppercase}#ff-app .cycle .lbl span{color:var(--glute)}#ff-app .cycle .grow{flex:1}#ff-app .btn{background:var(--granite3);color:var(--snow);border:1px solid var(--faint);border-radius:9px;padding:8px 12px;font:600 13px var(--body);cursor:pointer}#ff-app .btn:active{transform:scale(.97)}#ff-app .btn.primary{background:var(--glute);border-color:var(--glute)}#ff-app .banner{display:none;margin-top:10px;background:rgba(88,198,216,.12);border:1px solid rgba(88,198,216,.35);color:var(--snow);border-radius:10px;padding:10px 12px;font-size:13px}#ff-app .banner.on{display:block}#ff-app nav{background:rgba(20,26,32,.92);backdrop-filter:blur(8px);display:flex;gap:6px;padding:10px 0;margin-bottom:8px;overflow-x:auto;border-radius:12px}#ff-app nav button{flex:1;min-width:max-content;background:none;border:1px solid var(--faint);color:var(--mist);border-radius:999px;padding:8px 14px;font:600 13px var(--body);cursor:pointer}#ff-app nav button.on{background:var(--snow);color:var(--granite);border-color:var(--snow)}#ff-app section.tab{display:none}#ff-app section.tab.on{display:block}#ff-app h2{font-family:var(--disp);font-size:26px;text-transform:uppercase;margin:18px 0 10px}#ff-app h3{font-family:var(--disp);font-size:20px;text-transform:uppercase;margin:16px 0 8px}#ff-app .card{background:var(--granite2);border:1px solid var(--faint);border-radius:14px;padding:14px;margin-bottom:12px}#ff-app .muted{color:var(--mist);font-size:13px}#ff-app .prio{display:grid;gap:8px}#ff-app .prio div{display:flex;gap:10px;align-items:flex-start;font-size:14px}#ff-app .prio b{font-family:var(--mono);color:var(--glute);min-width:22px}#ff-app .bar{height:8px;background:var(--granite3);border-radius:99px;overflow:hidden;margin:8px 0 4px}#ff-app .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--glute),var(--upper));transition:width .3s}#ff-app .days{display:grid;gap:8px}#ff-app .day{display:flex;align-items:center;gap:12px;background:var(--granite2);border:1px solid var(--faint);border-left:4px solid var(--raised);border-radius:12px;padding:12px;cursor:pointer;user-select:none}#ff-app .day.done{opacity:.6}#ff-app .day .d{font-family:var(--mono);font-size:12px;color:var(--mist);width:34px}#ff-app .day .t{flex:1;font-size:14px;font-weight:500}#ff-app .day .t small{display:block;color:var(--mist);font-weight:400;font-size:12px}#ff-app .chk{width:24px;height:24px;border-radius:7px;border:2px solid var(--raised);display:grid;place-items:center;flex-shrink:0;font-size:14px;color:transparent}#ff-app .done .chk, #ff-app .chk.on{background:var(--ok);border-color:var(--ok);color:#fff}#ff-app .day.rest{cursor:default}#ff-app .c-glute{border-left-color:var(--glute)!important}#ff-app .c-upper{border-left-color:var(--upper)!important}#ff-app .c-cross{border-left-color:var(--cross)!important}#ff-app .c-ok{border-left-color:var(--ok)!important}#ff-app .sess-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}#ff-app .sess-head h3{margin:0}#ff-app .tag{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:99px;background:var(--granite3);color:var(--mist);white-space:nowrap}#ff-app .ex{display:flex;gap:10px;padding:12px 0;border-top:1px solid var(--faint);align-items:flex-start}#ff-app .ex:first-of-type{border-top:none}#ff-app .ex .chk{cursor:pointer;margin-top:2px}#ff-app .ex .body{flex:1;min-width:0}#ff-app .ex .name{font-weight:600;font-size:14px}#ff-app .ex .meta{font-family:var(--mono);font-size:12px;color:var(--mist);margin-top:2px}#ff-app .ex input{width:74px;background:var(--granite);border:1px solid var(--raised);color:var(--snow);border-radius:8px;padding:6px 8px;font:500 13px var(--mono);text-align:center}#ff-app .ex label{font-size:10px;color:var(--mist);display:block;text-align:center;margin-top:2px}#ff-app ul.tips{list-style:none;display:grid;gap:6px;margin-top:6px}#ff-app ul.tips li{font-size:13px;color:var(--mist);padding-left:14px;position:relative}#ff-app ul.tips li::before{content:"›";position:absolute;left:0;color:var(--glute)}#ff-app .warm{font-size:13px;color:var(--mist)}#ff-app .warm ol{padding-left:18px;margin-top:4px;display:grid;gap:3px}#ff-app .rate{display:grid;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--faint)}#ff-app .rate-row{display:flex;align-items:center;gap:8px;font-size:13px}#ff-app .rate-row span{width:62px;color:var(--mist)}#ff-app .dots{display:flex;gap:6px}#ff-app .dots button{width:34px;height:34px;border-radius:9px;border:1px solid var(--raised);background:var(--granite);color:var(--mist);font:600 13px var(--mono);cursor:pointer}#ff-app .dots button.on{background:var(--upper);border-color:var(--upper);color:var(--granite)}#ff-app .circuit{background:var(--granite3);border-radius:10px;padding:10px 12px;margin-top:8px;font-size:13px}#ff-app .circuit ol{padding-left:18px;display:grid;gap:3px;margin-top:4px}#ff-app .tours{display:flex;gap:8px;align-items:center;margin-top:8px}#ff-app table{width:100%;border-collapse:collapse;font-size:13px}#ff-app th, #ff-app td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--faint);vertical-align:top}#ff-app th{font-family:var(--mono);font-size:11px;color:var(--mist);font-weight:500;text-transform:uppercase}#ff-app tr.cur td{background:rgba(228,72,60,.12)}#ff-app tr.cur td:first-child{color:var(--glute);font-weight:700}#ff-app .lvl{display:flex;gap:6px;margin:6px 0 10px}#ff-app .lvl button{flex:1;padding:8px 0;border-radius:9px;border:1px solid var(--raised);background:var(--granite);color:var(--mist);font:700 14px var(--mono);cursor:pointer}#ff-app .lvl button.on{background:var(--glute);border-color:var(--glute);color:#fff}#ff-app .now{background:var(--granite3);border-radius:10px;padding:10px 12px;font-size:14px}#ff-app .now b{color:var(--snow)}#ff-app .form{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}#ff-app .form input{width:100%;background:var(--granite);border:1px solid var(--raised);color:var(--snow);border-radius:8px;padding:9px;font:500 14px var(--mono)}#ff-app .form .btn{grid-column:1/-1}#ff-app .log{margin-top:10px;display:grid;gap:6px}#ff-app .log div{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;background:var(--granite3);border-radius:8px;padding:8px 10px}#ff-app .log em{color:var(--mist);font-style:normal}#ff-app .goal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}#ff-app .goal div{background:var(--granite2);border:1px solid var(--faint);border-radius:12px;padding:12px;text-align:center}#ff-app .goal b{display:block;font-family:var(--disp);font-size:34px;line-height:1}#ff-app .goal small{color:var(--mist);font-size:12px}#ff-app .rules p, #ff-app .rules li{font-size:14px}#ff-app .rules ul{padding-left:18px;display:grid;gap:5px}#ff-app footer{margin-top:24px;text-align:center}
+
 </style>
 </head>
 <body>
@@ -183,6 +189,7 @@
   <button class="tab" data-sec="b3" data-b="b3">Bloc 3 · Natation</button>
   <button class="tab" data-sec="b4" data-b="b4">Affûtage</button>
   <button class="tab" data-sec="nat" data-b="nat">Guide natation</button>
+  <button class="tab" data-sec="ff" data-b="ff">Muscu · Fessiers &amp; Force</button>
 </div></nav>
 
 <main class="wrap">
@@ -252,6 +259,133 @@
         <li><b>Drapeau rouge :</b> si à un mois du concours elle reste loin des 60 s, passer à <span class="key">2 séances natation par semaine</span> jusqu'au jour J.</li>
       </ul></div>
     </div>
+  </section>
+
+  <!-- MUSCU FESSIERS & FORCE -->
+  <section id="sec-ff">
+<div id="ff-app">
+<div class="wrap">
+<header>
+  <div class="kicker">Super sapeur-pompier · Programme muscu</div>
+  <h1>Fessiers &amp; Force</h1>
+  <div class="sub">3 séances · 45 min · charges modérées, efficacité avant tout</div>
+  <div class="cycle">
+    <div class="lbl">Semaine <span id="wk">1</span>/4</div>
+    <div class="grow"></div>
+    <button class="btn primary" id="newWeek">Nouvelle semaine</button>
+  </div>
+  <div class="banner" id="deload"><b>Semaine allégée.</b> Une série de moins par exercice, mêmes charges. Lundi : test max pompes et tractions (onglet Progression).</div>
+</header>
+
+<nav>
+  <button data-tab="semaine" class="on">Semaine</button>
+  <button data-tab="seances">Séances</button>
+  <button data-tab="progression">Progression</button>
+  <button data-tab="regles">Règles</button>
+</nav>
+
+<!-- SEMAINE -->
+<section class="tab on" id="semaine">
+  <div class="card">
+    <div class="muted">Avancement de la semaine</div>
+    <div class="bar"><i id="weekBar"></i></div>
+    <div class="muted" id="weekTxt">0/6</div>
+  </div>
+  <div class="days" id="days"></div>
+  <h2>Priorités</h2>
+  <div class="card prio">
+    <div><b>01</b>Des fessiers plus volumineux.</div>
+    <div><b>02</b>Garder de la force, surtout au haut du corps.</div>
+    <div><b>03</b>10 pompes sur les pieds et 3 tractions sans élastique, sans pause.</div>
+  </div>
+</section>
+
+<!-- SEANCES -->
+<section class="tab" id="seances">
+  <div class="card warm">
+    <h3 style="margin-top:0">Échauffement commun · 5 min</h3>
+    <ol>
+      <li>Rameur ou vélo : 2 min, rythme facile.</li>
+      <li>Pont fessier au sol : 2 × 15.</li>
+      <li>Marche latérale avec mini-bande : 2 × 10 pas par côté.</li>
+      <li>Suspension à la barre, épaules engagées : 2 × 15 s (mardi).</li>
+      <li>Lundi et jeudi : 2 séries de son exercice de tractions.</li>
+    </ol>
+  </div>
+  <div id="sessions"></div>
+</section>
+
+<!-- PROGRESSION -->
+<section class="tab" id="progression">
+  <div class="goal">
+    <div><b id="bestP">–</b><small>meilleur pompes / 10</small></div>
+    <div><b id="bestT">–</b><small>meilleur tractions / 3</small></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Pompes · niveau actuel</h3>
+    <div class="lvl" data-k="lvlP"></div>
+    <div class="now" id="nowP"></div>
+    <table id="tabP"></table>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Tractions · niveau actuel</h3>
+    <div class="lvl" data-k="lvlT"></div>
+    <div class="now" id="nowT"></div>
+    <table id="tabT"></table>
+    <p class="muted" style="margin-top:8px">Plus d'élastique, sauf pour finir une séance au niveau 1. La négative est l'exercice le plus efficace pour la première traction.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Tests (semaine 4, lundi)</h3>
+    <div class="form">
+      <input type="number" id="tP" placeholder="Max pompes" inputmode="numeric">
+      <input type="number" id="tT" placeholder="Max tractions" inputmode="numeric">
+      <button class="btn primary" id="addTest">Enregistrer le test</button>
+    </div>
+    <div class="log" id="testLog"></div>
+  </div>
+</section>
+
+<!-- REGLES -->
+<section class="tab rules" id="regles">
+  <div class="card">
+    <h3 style="margin-top:0">Charges</h3>
+    <ul>
+      <li>Chaque série s'arrête avec 2 ou 3 répétitions en réserve. Jamais d'échec.</li>
+      <li>Haut de la fourchette atteint sur toutes les séries : on augmente la charge.</li>
+      <li>Haut du corps : +1 à 2,5 kg. Hip thrust et soulevé de terre : +5 kg.</li>
+      <li>Noter les charges à chaque séance (onglet Séances).</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Cycle de 4 semaines</h3>
+    <table>
+      <tr><th>Semaine</th><th>Contenu</th></tr>
+      <tr><td>1 à 3</td><td>Progression normale des charges.</td></tr>
+      <tr><td>4</td><td>Semaine allégée : une série de moins, mêmes charges.</td></tr>
+      <tr><td>4, lundi</td><td>Test max pompes et tractions.</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Plaisir et ajustements</h3>
+    <ul>
+      <li>Après chaque séance, noter plaisir et énergie sur 5.</li>
+      <li>Exercice noté 2 ou moins deux fois de suite : on le remplace par une variante qu'elle préfère.</li>
+      <li>Joker : une fois par semaine, elle change un exercice de son choix. Hip thrust, pompes et tractions restent fixes.</li>
+      <li>Jambes lourdes après la course ou la rando : mêmes exercices, charge −10 %.</li>
+      <li>Course du mercredi à allure facile pour arriver fraîche le jeudi.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Alimentation</h3>
+    <p>Pour faire grossir les fessiers, il faut manger suffisamment. Des protéines à chaque repas. Sans apport suffisant, le muscle ne se construit pas.</p>
+  </div>
+  <footer><button class="btn" id="reset">Tout réinitialiser</button></footer>
+</section>
+</div>
+</div>
   </section>
 
   <footer>
@@ -438,6 +572,159 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('sw.js').catch(() => {});
   });
 }
+</script>
+<script>
+(function(){
+"use strict";
+
+const KEY='ff_programme_v1';
+const DEF={week:1,days:{},ex:{},loads:{},rates:{},tours:{},lvlP:1,lvlT:1,tests:[]};
+let mem=null;
+function load(){try{const s=localStorage.getItem(KEY);if(s)return Object.assign({},DEF,JSON.parse(s));}catch(e){} return mem?mem:JSON.parse(JSON.stringify(DEF));}
+function save(){mem=S;try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+let S=load();
+
+const DAYS=[
+ {id:'lun',d:'LUN',t:'Muscu — Fessiers + pompes',c:'c-glute',sess:'lun'},
+ {id:'mar',d:'MAR',t:'Muscu — Haut du corps + tractions',c:'c-upper',sess:'mar'},
+ {id:'mer',d:'MER',t:'Course',s:'Allure facile',c:'c-ok'},
+ {id:'jeu',d:'JEU',t:'Muscu — Fessiers + cross-training',c:'c-cross',sess:'jeu'},
+ {id:'ven',d:'VEN',t:'Course',c:'c-ok'},
+ {id:'sam',d:'SAM',t:'Repos',rest:true},
+ {id:'dim',d:'DIM',t:'Randonnée avec sac',c:'c-ok'}
+];
+
+const SESS=[
+ {id:'lun',title:'Lundi — Fessiers + pompes',c:'c-glute',tag:'45 min',
+  intro:'La séance clé pour la priorité n°1. Supersets pour gagner du temps.',
+  ex:[
+   {n:'A. Hip thrust à la barre',m:'4 × 10-12 · repos 1 min 30',kg:true},
+   {n:'B. Superset : montée sur box (haltères) + pompes (son niveau)',m:'3 × (10 par jambe + série pompes) · repos 1 min',kg:true},
+   {n:'C. Superset : soulevé de terre roumain + machine abducteur',m:'3 × (10-12 + 15-20) · repos 1 min',kg:true},
+   {n:'D. Planche',m:'2 × 1 min 30 minimum · repos 30 s'}
+  ],
+  tips:['Hip thrust : pause d\'une seconde en haut, fessiers serrés.','Soulevé roumain : dos plat, on pousse les hanches vers l\'arrière.','Montée sur box : pousser sur le talon du pied posé sur la box, sans s\'aider de la jambe au sol. Buste légèrement penché en avant.']},
+ {id:'mar',title:'Mardi — Haut du corps + tractions',c:'c-upper',tag:'45 min',
+  intro:'Force du haut du corps (priorité n°2). Tractions en premier, quand elle est fraîche.',
+  ex:[
+   {n:'A. Tractions (son niveau)',m:'4 séries · repos 1 min 30'},
+   {n:'B. Superset : développé couché haltères + rowing haltère un bras',m:'3 × (8-10 + 10 par bras) · repos 1 min 30',kg:true},
+   {n:'C. Superset : développé militaire haltères assis + relevé de buste sur banc',m:'3 × (10 + 12-15) · repos 1 min',kg:true},
+   {n:'D. Finisher corde ondulatoire',m:'4 × (30 s effort / 30 s repos)'}
+  ],
+  tips:['Rowing : on tire le coude vers la hanche, pas vers le plafond.','Développé couché : omoplates serrées, pieds bien ancrés.','Relevé de buste : au-delà de 15 reps faciles, tenir un disque ou incliner le banc.','Si la séance déborde de 45 min, on saute le finisher.']},
+ {id:'jeu',title:'Jeudi — Fessiers + cross-training',c:'c-cross',tag:'45 min',
+  intro:'Deuxième séance fessiers, plus légère et plus de répétitions. Fin sur un circuit fun.',
+  ex:[
+   {n:'A. Hip thrust ou pont fessier, pause 2 s en haut',m:'3 × 12-15 · repos 1 min',kg:true},
+   {n:'B. Superset : montée sur box + machine abducteur + machine adducteur',m:'3 × (10 par jambe + 15 + 15) · repos 1 min',kg:true},
+   {n:'C. Circuit cross-training',m:'Max de tours en 10 min',circuit:true},
+   {n:'D. Gainage latéral',m:'2 × 1 min 30 minimum par côté · repos 30 s'}
+  ],
+  tips:['Montée sur box : si les genoux tirent, prendre une box moins haute.','Battre le nombre de tours de la semaine précédente.']}
+];
+
+const LP=[
+ ['1','Pompes inclinées, mains sur un banc (~45 cm)','4 × 8-12','4 × 12 propres'],
+ ['2','Pompes inclinées, mains sur une marche ou un step (~20-30 cm)','4 × 8-12','4 × 12 propres'],
+ ['3','Négatives au sol (descente 3 s), remontée sur les genoux','4 × 5','4 × 5 + 2 pompes complètes'],
+ ['4','Pompes au sol','4 × 4-8','1 série de 10 = objectif']
+];
+const LT=[
+ ['1','Rowing inversé + maintien menton au-dessus de la barre','4 × 8-10 + 4 × 10-15 s','Maintien de 20 s'],
+ ['2','Négatives (descente 5 s) + tirage vertical poulie','4 × 3 + 3 × 8','4 × 3 négatives de 5 s'],
+ ['3','Négatives lentes (8 s) + 1 tentative stricte en début de série','5 × 3','1 traction stricte'],
+ ['4','Séries de 1-2 tractions strictes + 2 négatives','5-6 séries','3 d\'affilée = objectif']
+];
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function renderWeek(){
+  document.getElementById('wk').textContent=S.week;
+  document.getElementById('deload').classList.toggle('on',S.week===4);
+  const box=document.getElementById('days');box.innerHTML='';
+  let n=0,tot=0;
+  DAYS.forEach(d=>{
+    const el=document.createElement('div');
+    const done=!!S.days[d.id];
+    if(!d.rest){tot++;if(done)n++;}
+    el.className='day '+(d.c||'')+(done?' done':'')+(d.rest?' rest':'');
+    el.innerHTML=`<div class="d">${d.d}</div><div class="t">${esc(d.t)}${d.s?`<small>${esc(d.s)}</small>`:''}${d.sess?'<small>Voir l\'onglet Séances</small>':''}</div>${d.rest?'':'<div class="chk">✓</div>'}`;
+    if(!d.rest)el.onclick=()=>{S.days[d.id]=!S.days[d.id];save();renderWeek();};
+    box.appendChild(el);
+  });
+  document.getElementById('weekBar').style.width=(tot?n/tot*100:0)+'%';
+  document.getElementById('weekTxt').textContent=n+'/'+tot+' activités faites';
+}
+
+function renderSessions(){
+  const box=document.getElementById('sessions');box.innerHTML='';
+  SESS.forEach(s=>{
+    const c=document.createElement('div');c.className='card '+s.c;c.style.borderLeft='4px solid';
+    let h=`<div class="sess-head"><h3>${esc(s.title)}</h3><span class="tag">${s.tag}</span></div><p class="muted" style="margin:6px 0 4px">${esc(s.intro)}</p>`;
+    s.ex.forEach((e,i)=>{
+      const k=s.id+'-'+i, on=!!S.ex[k];
+      h+=`<div class="ex"><div class="chk ${on?'on':''}" data-ex="${k}">✓</div><div class="body"><div class="name">${esc(e.n)}</div><div class="meta">${esc(e.m)}</div>`;
+      if(e.circuit){
+        h+=`<div class="circuit"><b>Un maximum de tours :</b><ol><li>8 soulevés de sac (sol → épaule, alterner).</li><li>12 kettlebell swings.</li><li>20 s de corde ondulatoire.</li><li>5 pompes à son niveau.</li></ol>
+        <div class="tours"><span class="muted">Tours cette semaine</span><input type="number" inputmode="numeric" data-tours="${s.id}" value="${S.tours[s.id]??''}" style="width:70px;background:var(--granite);border:1px solid var(--raised);color:var(--snow);border-radius:8px;padding:6px;font:500 13px var(--mono);text-align:center"></div></div>`;
+      }
+      h+=`</div>`;
+      if(e.kg)h+=`<div><input type="text" inputmode="decimal" data-kg="${k}" value="${esc(S.loads[k]??'')}" placeholder="kg"><label>charge</label></div>`;
+      h+=`</div>`;
+    });
+    h+=`<ul class="tips">${s.tips.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`;
+    const r=S.rates[s.id]||{};
+    h+=`<div class="rate">${['plaisir','energie'].map(t=>`<div class="rate-row"><span>${t==='plaisir'?'Plaisir':'Énergie'}</span><div class="dots">${[1,2,3,4,5].map(v=>`<button data-rate="${s.id}|${t}|${v}" class="${r[t]===v?'on':''}">${v}</button>`).join('')}</div></div>`).join('')}
+      <button class="btn primary" data-finish="${s.id}">${S.days[s.id]?'Séance terminée ✓':'Terminer la séance'}</button></div>`;
+    c.innerHTML=h;box.appendChild(c);
+  });
+  box.querySelectorAll('[data-ex]').forEach(b=>b.onclick=()=>{const k=b.dataset.ex;S.ex[k]=!S.ex[k];save();b.classList.toggle('on',!!S.ex[k]);});
+  box.querySelectorAll('[data-kg]').forEach(i=>i.onchange=()=>{S.loads[i.dataset.kg]=i.value.trim();save();});
+  box.querySelectorAll('[data-tours]').forEach(i=>i.onchange=()=>{S.tours[i.dataset.tours]=i.value;save();});
+  box.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>{const[id,t,v]=b.dataset.rate.split('|');S.rates[id]=S.rates[id]||{};S.rates[id][t]=+v;save();renderSessions();});
+  box.querySelectorAll('[data-finish]').forEach(b=>b.onclick=()=>{S.days[b.dataset.finish]=true;save();renderSessions();renderWeek();});
+}
+
+function renderLevels(){
+  [['lvlP',LP,'nowP','tabP'],['lvlT',LT,'nowT','tabT']].forEach(([k,L,nowId,tabId])=>{
+    const lv=document.querySelector(`.lvl[data-k="${k}"]`);
+    lv.innerHTML=[1,2,3,4].map(n=>`<button class="${S[k]===n?'on':''}" data-n="${n}">N${n}</button>`).join('');
+    lv.querySelectorAll('button').forEach(b=>b.onclick=()=>{S[k]=+b.dataset.n;save();renderLevels();});
+    const cur=L[S[k]-1];
+    document.getElementById(nowId).innerHTML=`<b>${esc(cur[1])}</b><br><span class="muted">${esc(cur[2])} · passage : ${esc(cur[3])}</span>`;
+    document.getElementById(tabId).innerHTML='<tr><th>Niv.</th><th>Exercice</th><th>Passage</th></tr>'+L.map(r=>`<tr class="${+r[0]===S[k]?'cur':''}"><td>${r[0]}</td><td>${esc(r[1])}<br><span class="muted">${esc(r[2])}</span></td><td>${esc(r[3])}</td></tr>`).join('');
+  });
+  const log=document.getElementById('testLog');
+  log.innerHTML=S.tests.length?S.tests.slice().reverse().map(t=>`<div><em>${esc(t.d)}</em><span>${t.p} pompes · ${t.t} tractions</span></div>`).join(''):'<p class="muted">Aucun test enregistré. Faire un test de départ en semaine 1.</p>';
+  const bp=S.tests.reduce((m,t)=>Math.max(m,+t.p||0),0), bt=S.tests.reduce((m,t)=>Math.max(m,+t.t||0),0);
+  document.getElementById('bestP').textContent=S.tests.length?bp:'–';
+  document.getElementById('bestT').textContent=S.tests.length?bt:'–';
+}
+
+document.getElementById('addTest').onclick=()=>{
+  const p=document.getElementById('tP').value,t=document.getElementById('tT').value;
+  if(p===''&&t==='')return;
+  S.tests.push({d:new Date().toLocaleDateString('fr-FR'),p:p||0,t:t||0});save();
+  document.getElementById('tP').value='';document.getElementById('tT').value='';renderLevels();
+};
+document.getElementById('newWeek').onclick=()=>{
+  if(!confirm('Passer à la semaine suivante ? Les cases cochées seront remises à zéro (les charges sont gardées).'))return;
+  S.week=S.week>=4?1:S.week+1;S.days={};S.ex={};S.rates={};S.tours={};save();renderAll();
+};
+document.getElementById('reset').onclick=()=>{
+  if(!confirm('Tout effacer : charges, tests, niveaux ?'))return;
+  S=JSON.parse(JSON.stringify(DEF));save();renderAll();
+};
+document.querySelectorAll('#ff-app nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#ff-app nav button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('#ff-app section.tab').forEach(s=>s.classList.toggle('on',s.id===b.dataset.tab));
+  window.scrollTo({top:0});
+});
+function renderAll(){renderWeek();renderSessions();renderLevels();}
+renderAll();
+
+})();
 </script>
 </body>
 </html>
